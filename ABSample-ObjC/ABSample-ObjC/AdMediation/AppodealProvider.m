@@ -10,7 +10,7 @@
 @import Appodeal;
 
 // Constants
-static NSString * const kAppodealApiKey             = @"Put your api key here";
+static NSString * const kAppodealApiKey             = @"dee74c5129f53fc629a44a690a02296694e3eef99f2d3a5f";
 static NSString * const kAppodealDefaultPlacement   = @"default";
 static BOOL const kHasUserConsent                   = YES;
 static AppodealAdType const kAppodealAdTypes        = AppodealAdTypeBanner | AppodealAdTypeInterstitial | AppodealAdTypeRewardedVideo;
@@ -35,6 +35,7 @@ AppodealShowStyle AppodealShowStyleFromType(AdType type) {
 @implementation AppodealProvider
 
 - (void)prepare {
+    [Appodeal setTestingEnabled:YES];
     [Appodeal initializeWithApiKey:kAppodealApiKey
                              types:kAppodealAdTypes
                         hasConsent:kHasUserConsent];

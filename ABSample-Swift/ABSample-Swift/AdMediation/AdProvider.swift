@@ -52,16 +52,17 @@ private extension AdType {
 
 class AppodealProvider : AdProvider {
     private struct Constants {
-        static let apiKey = "Put your api key here"
+        static let apiKey = "dee74c5129f53fc629a44a690a02296694e3eef99f2d3a5f"
         static let userConsent = true
         static let placement = "default"
         static let adTypes : AppodealAdType = [.banner, .interstitial, .rewardedVideo]
     }
-
+    
     func prepare() {
-       Appodeal.initialize(withApiKey: Constants.apiKey,
-                           types: Constants.adTypes,
-                           hasConsent: Constants.userConsent)
+        Appodeal.setTestingEnabled(true)
+        Appodeal.initialize(withApiKey: Constants.apiKey,
+                            types: Constants.adTypes,
+                            hasConsent: Constants.userConsent)
     }
     
     func hasReadyAd(_ type: AdType) -> Bool {

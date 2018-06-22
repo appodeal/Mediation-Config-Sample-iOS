@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,15 +13,67 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUx-F6-8aX">
+                                <rect key="frame" x="138" y="80" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="1wc-It-P9s"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="jfo-rL-04T"/>
+                                    <constraint firstAttribute="height" constant="30" id="m8s-N7-UOC"/>
+                                </constraints>
+                                <state key="normal" title="Show Banner"/>
+                                <connections>
+                                    <action selector="presentBanner" destination="Lr8-Kc-cWQ" eventType="touchUpInside" id="6Ho-Ai-bdR"/>
+                                    <action selector="presentBanner" destination="BYZ-38-t0r" eventType="touchUpInside" id="89N-2e-vba"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8a-kj-ZbD">
+                                <rect key="frame" x="110" y="172" width="154" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="87g-cu-Pdz"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Tdb-xS-KCi"/>
+                                    <constraint firstAttribute="height" constant="30" id="XjL-yP-hbe"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="dbv-10-fyC"/>
+                                </constraints>
+                                <state key="normal" title="Show Rewarded Video"/>
+                                <connections>
+                                    <action selector="presentRewardedVideo" destination="BYZ-38-t0r" eventType="touchUpInside" id="jfY-4z-te9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcp-7j-5YE">
+                                <rect key="frame" x="112" y="126" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GbJ-fb-OrK"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Hhm-L7-6tf"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="RCF-GN-frH"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="veq-kx-qAk"/>
+                                </constraints>
+                                <state key="normal" title="Show Interstitial"/>
+                                <connections>
+                                    <action selector="presentInterstitial:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fNT-qM-yI7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bcp-7j-5YE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2no-6O-Zik"/>
+                            <constraint firstItem="qUx-F6-8aX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="A8d-Z0-AOt"/>
+                            <constraint firstItem="q8a-kj-ZbD" firstAttribute="top" secondItem="bcp-7j-5YE" secondAttribute="bottom" constant="16" id="Bca-ie-wYN"/>
+                            <constraint firstItem="bcp-7j-5YE" firstAttribute="top" secondItem="qUx-F6-8aX" secondAttribute="bottom" constant="16" id="Fzc-Kq-K83"/>
+                            <constraint firstItem="qUx-F6-8aX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MIZ-Ee-XLx"/>
+                            <constraint firstItem="q8a-kj-ZbD" firstAttribute="top" secondItem="bcp-7j-5YE" secondAttribute="bottom" constant="16" id="Mzw-ZY-ksR"/>
+                            <constraint firstItem="q8a-kj-ZbD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="awt-yL-Tf6"/>
+                            <constraint firstItem="bcp-7j-5YE" firstAttribute="top" secondItem="qUx-F6-8aX" secondAttribute="bottom" constant="16" id="zfD-J8-fRW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="Lr8-Kc-cWQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
         </scene>
     </scenes>

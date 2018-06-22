@@ -17,7 +17,7 @@ enum AdMediationType : String {
 
 final class AdMediation: NSObject {
     private struct Constants {
-        static let key = "mediation_partner_2"
+        static let key = "mediation_partner"
     }
     
     private(set) var type: AdMediationType = .Unknown

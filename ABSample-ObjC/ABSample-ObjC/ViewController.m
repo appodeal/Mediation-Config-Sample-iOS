@@ -16,16 +16,22 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+- (IBAction)presentBanner {
+    [self showAd:AdTypeBanner];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)presentRewardedVideo {
+    [self showAd:AdTypeRewardedVideo];
 }
 
+- (IBAction)presentInterstitial:(id)sender {
+    [self showAd:AdTypeInterstitial];
+}
+
+- (void)showAd:(AdType)adType {
+    if ([AdMediation.sharedInstance.provider hasReadyAd:adType]) {
+        [AdMediation.sharedInstance.provider presentAd:adType rootViewController:self];
+    }
+}
 
 @end

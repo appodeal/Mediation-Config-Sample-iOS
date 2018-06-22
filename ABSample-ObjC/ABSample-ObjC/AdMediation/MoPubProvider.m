@@ -6,12 +6,13 @@
 //  Copyright © 2018 Appodeal. All rights reserved.
 //
 
+
 #import "MoPubProvider.h"
 #import <MoPubSDK/MoPub.h>
 
-static NSString * const kMoPubInterstitialAdUnit        = @"";
-static NSString * const kMoPubRewardedAdUnit            = @"";
-static NSString * const kMoPubBannerAdUnit              = @"";
+static NSString * const kMoPubInterstitialAdUnit        = @"4f117153f5c24fa6a3a92b818a5eb630";
+static NSString * const kMoPubRewardedAdUnit            = @"8f000bd5e00246de9c789eed39ff6096";
+static NSString * const kMoPubBannerAdUnit              = @"0ac59b0996d947309c33f59d6676399f";
 
 @interface MoPubProvider ()
 
@@ -70,7 +71,7 @@ static NSString * const kMoPubBannerAdUnit              = @"";
 
 - (void)layoutBannerOnView:(UIView *)view {
     if ([view.subviews containsObject:self.bannerView]) {
-        return
+        return;
     }
     
     CGSize size = [self.bannerView adContentViewSize];

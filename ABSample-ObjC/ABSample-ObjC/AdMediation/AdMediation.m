@@ -13,7 +13,7 @@
 
 @import Firebase;
 
-static NSString * const kAdMediationTypeKey = @"mediation_partner_2";
+static NSString * const kAdMediationTypeKey = @"mediation_partner";
 
 @interface AdMediation ()
 
