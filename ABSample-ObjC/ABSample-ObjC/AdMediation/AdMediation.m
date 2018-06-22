@@ -69,7 +69,7 @@ static NSString * const kAdMediationTypeKey = @"mediation_partner";
     
     __weak typeof(self) weakSelf = self;
     [self.config fetchWithCompletionHandler:^(FIRRemoteConfigFetchStatus status, NSError * error) {
-        AdMediationType type = AdMediationTypeUnknown;
+        AdMediationType type = AdMediationTypeAppodeal;
         if (status == FIRRemoteConfigFetchStatusSuccess) {
             [weakSelf.config activateFetched];
             FIRRemoteConfigValue * value = [weakSelf.config configValueForKey:kAdMediationTypeKey];

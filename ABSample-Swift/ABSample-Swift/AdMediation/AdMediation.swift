@@ -42,7 +42,8 @@ final class AdMediation: NSObject {
             }
             self.config.activateFetched()
             let value = self.config.configValue(forKey: Constants.key)
-            self.type = value.stringValue.map { AdMediationType(rawValue: $0)}! ?? .Unknown
+            print("Choosed mediation partner: \(String(describing: value.stringValue))")
+            self.type = value.stringValue.map { AdMediationType(rawValue: $0) }! ?? .Unknown
             // Update provider
             switch self.type {
             case .Appodeal:
