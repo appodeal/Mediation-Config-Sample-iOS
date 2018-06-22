@@ -111,13 +111,13 @@ class MoPubProvider : AdProvider {
     func presentAd(_ type: AdType, _ rootViewController : UIViewController) {
         switch type {
         case .banner:
-            layoutBanner(superview: banner)
+            layoutBanner(superview: rootViewController.view)
         case .interstitial:
             interstitial.show(from: rootViewController)
         case .rewarded:
             MPRewardedVideo.presentAd(forAdUnitID: Constants.rewardedAdUnit,
                                       from: rootViewController,
-                                      with: MPRewardedVideoReward(currencyType: "Coins", amount: 23))
+                                      with: nil)
         }
     }
 }

@@ -59,7 +59,7 @@ static NSString * const kMoPubBannerAdUnit              = @"0ac59b0996d947309c33
             [self.interstitial showFromViewController:rootViewController];
             break; }
         case AdTypeBanner: {
-            [rootViewController.view addSubview:self.bannerView];
+            [self layoutBannerOnView:rootViewController.view];
             break; }
         case AdTypeRewardedVideo: {
             [MPRewardedVideo presentRewardedVideoAdForAdUnitID:kMoPubRewardedAdUnit
@@ -75,11 +75,12 @@ static NSString * const kMoPubBannerAdUnit              = @"0ac59b0996d947309c33
     }
     
     CGSize size = [self.bannerView adContentViewSize];
-    CGRect newFrame = view.frame;
-    newFrame.size = size;
-    newFrame.origin.x = (view.bounds.size.width - size.width) / 2;
-    newFrame.origin.y = (view.bounds.size.height - size.height);
-    self.bannerView.frame = newFrame;
+    CGRect frame = CGRectMake((view.bounds.size.width - size.width) / 2,
+                              (view.bounds.size.height - size.height),
+                              size.width,
+                              size.height);
+  
+    self.bannerView.frame = frame;
     [view addSubview:self.bannerView];
 }
 

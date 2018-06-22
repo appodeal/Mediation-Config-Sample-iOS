@@ -73,6 +73,7 @@ static NSString * const kAdMediationTypeKey = @"mediation_partner";
         if (status == FIRRemoteConfigFetchStatusSuccess) {
             [weakSelf.config activateFetched];
             FIRRemoteConfigValue * value = [weakSelf.config configValueForKey:kAdMediationTypeKey];
+            NSLog(@"Choosed mediation partner: %@", value.stringValue);
             if ([value.stringValue isEqualToString:@"appodeal"]) {
                 type = AdMediationTypeAppodeal;
             } else if ([value.stringValue isEqualToString:@"mopub"]){
